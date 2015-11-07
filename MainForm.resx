@@ -191,17 +191,6 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>629, 17</value>
   </metadata>
-  <data name="Add_country.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAASBJREFUSEu9
-        VdsNgzAMZISO0BH45LFER+gGZRQ2KBuUDcoGZRO6QeoLpm0c84oUTjqEYvvsOK9kCSbLzibPb6YoHsSX
-        KUtjiX+MwUY+7L4dJk1PJHD/Cq4RvhTD4cugqi4UNHgi6xwQyzI6qJKrEriPpMFyLrhyPWgv5Uxsz8Pa
-        MsfBWRMaaISDz6Lo2B2t7FQfl83ojK2oO7jcn8DYLUw/lWfQGJIAC06fVjVKhiVoMYPeM4zGTrBmfSSo
-        hU1PSCceCXwDkbU2Q9MAD0mgt6gsnw5li6Rd1+gPWeTI2zT2QbMBMa8KgB+Yt+IURmjJByjqdT2BMsd7
-        cCbYmYS0CzFzlUvwA7S+8D82Xs+3gLdwRdXhMP6f+N6OoaXTVlSRJB8AKAoQBwxDBAAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
   <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>237, 17</value>
   </metadata>

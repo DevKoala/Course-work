@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WorkWithExcel;
+using System.Data.SqlClient;
 
 namespace work
 {
@@ -85,6 +87,7 @@ namespace work
         {
             if (path == null) return;
             excelTool.saveExcelFile();
+            MessageBox.Show("Зміни збережено!");
         }
 
 
@@ -113,13 +116,23 @@ namespace work
         // SEARCH
         private void textSearch_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
-                if (dataGridView[1, i].Value.ToString() != textSearch.Text)
+            for (int i = 0; i <= dataGridView.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j <= dataGridView.Rows.Count - 1; j++)
                 {
-                    //Проход по всем строкам таблицы и возврат исходной
-                    for (int d = 0; d < dataGridView.Rows.Count - 2; d++)
-                        dataGridView.Rows[d].Visible = true;
+                    if (dataGridView[j, i].Value.ToString() == textSearch.Text)
+                    {
+                        MessageBox.Show(textSearch.Text);
+                        //Проход по всем строкам таблицы и возврат исходной
+                    }
+                    else break;
                 }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(textSearch.Text);
         }
     }
 }
