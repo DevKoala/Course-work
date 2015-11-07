@@ -116,16 +116,23 @@ namespace work
         // SEARCH
         private void textSearch_TextChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i <= dataGridView.Rows.Count - 1; i++)
+
+            string searchValue = textSearch.Text;
+            for (int i = 3; i <= dataGridView.Rows.Count; i++)
             {
-                for (int j = 0; j <= dataGridView.Rows.Count - 1; j++)
-                {
-                    if (dataGridView[j, i].Value.ToString() == textSearch.Text)
+                try {
+                    foreach (DataGridViewRow row in dataGridView.Rows)
                     {
-                        MessageBox.Show(textSearch.Text);
-                        //Проход по всем строкам таблицы и возврат исходной
+                        if (row.Cells[2].Value.ToString().Equals(searchValue))
+                        {
+                            row.Selected = true;
+                            break;
+                        }
                     }
-                    else break;
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
                 }
             }
         }
@@ -133,6 +140,13 @@ namespace work
         private void btnSearch_Click(object sender, EventArgs e)
         {
             MessageBox.Show(textSearch.Text);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           DialogResult dialog_result = MessageBox.Show("Ви впевнені, що хочете вийти?", "Вихід", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog_result == DialogResult.No)
+                e.Cancel = true;          
         }
     }
 }
