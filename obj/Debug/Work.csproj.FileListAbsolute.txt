@@ -1,0 +1,36 @@
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\bin\Debug\Kulyniy_Kursach.exe.config
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Work.csproj.ResolveComReference.cache
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.exe
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.pdb
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Work.csprojResolveAssemblyReference.cache
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.EditForm.resources
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.MainForm.resources
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.StartForm.resources
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Work.csproj.GenerateResource.Cache
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\bin\Debug\Kulyniy_Kursach.exe
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\bin\Debug\Kulyniy_Kursach.pdb
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.Properties.Resources.resources
+C:\Users\Коля\Desktop\Course work\Work\obj\Debug\Work.csproj.ResolveComReference.cache
+C:\Users\Коля\Desktop\Course work\Work\obj\Debug\Work.csprojResolveAssemblyReference.cache
+C:\Users\Коля\Desktop\Course work\Work\obj\Debug\Work.csproj.GenerateResource.Cache
+C:\Users\Коля\Desktop\Course work\Work\bin\Debug\Work.exe.config
+C:\Users\Коля\Desktop\Course work\Work\bin\Debug\Work.exe
+C:\Users\Коля\Desktop\Course work\Work\bin\Debug\Work.pdb
+C:\Users\Коля\Desktop\Course work\Work\obj\Debug\Work.Properties.Resources.resources
+C:\Users\Коля\Desktop\Course work\Work\obj\Debug\Work.exe
+C:\Users\Коля\Desktop\Course work\Work\obj\Debug\Work.pdb
+C:\Users\Коля\Desktop\Course work\Work\obj\Debug\work.EditForm.resources
+C:\Users\Коля\Desktop\Course work\Work\obj\Debug\work.MainForm.resources
+C:\Users\Коля\Desktop\Course work\Work\obj\Debug\work.StartForm.resources
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\bin\Debug\Work.exe.config
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\Work.csproj.ResolveComReference.cache
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\Work.exe
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\Work.pdb
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\bin\Debug\Work.exe
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\bin\Debug\Work.pdb
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\Work.csprojResolveAssemblyReference.cache
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\work.EditForm.resources
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\work.MainForm.resources
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\work.StartForm.resources
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\Work.Properties.Resources.resources
+C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\Work.csproj.GenerateResource.Cache

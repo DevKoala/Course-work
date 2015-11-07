@@ -1,0 +1,24 @@
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\bin\Debug\Kulyniy_Kursach.exe.config
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\bin\Debug\Kulyniy_Kursach.exe
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\bin\Debug\Kulyniy_Kursach.pdb
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.csprojResolveAssemblyReference.cache
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.StartForm.resources
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.Properties.Resources.resources
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.csproj.GenerateResource.Cache
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.exe
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.pdb
+c:\users\володимир\documents\visual studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.MainForm.resources
+C:\Users\Володимир\Documents\Visual Studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.csproj.ResolveComReference.cache
+C:\Users\Володимир\Documents\Visual Studio 2015\Projects\Kulyniy_Kursach\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.EditForm.resources
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\bin\Debug\Kulyniy_Kursach.exe.config
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.csproj.ResolveComReference.cache
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.exe
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.pdb
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\bin\Debug\Kulyniy_Kursach.exe
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\bin\Debug\Kulyniy_Kursach.pdb
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.csprojResolveAssemblyReference.cache
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.EditForm.resources
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.MainForm.resources
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.StartForm.resources
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.Properties.Resources.resources
+C:\Users\Коля\Desktop\Course work\Kulyniy_Kursach\obj\Debug\Kulyniy_Kursach.csproj.GenerateResource.Cache
