@@ -50,16 +50,16 @@ namespace work
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            SaveFileDialog fileDialog = new SaveFileDialog();
-            fileDialog.Title = "Вкажіть ім'я під яким слід створити новий файл";
-            fileDialog.Filter = "*.xlsx|*.xlsx";
-            if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                path = fileDialog.FileName;
-                excelTool = new ExcelTools(path);
-            }
-            else return;
-            dataGridView.DataSource = excelTool.dataSet.Tables[0];
+            //SaveFileDialog fileDialog = new SaveFileDialog();
+            //fileDialog.Title = "Вкажіть ім'я під яким слід створити новий файл";
+            //fileDialog.Filter = "*.xlsx|*.xlsx";
+            //if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    path = fileDialog.FileName;
+            //    excelTool = new ExcelTools(path);
+            //}
+            //else return;
+            //dataGridView.DataSource = excelTool.dataSet.Tables[0];
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace work
         {
             if (path == null) return;
             excelTool.saveExcelFile();
-            MessageBox.Show("Зміни збережено!");
+
         }
 
 

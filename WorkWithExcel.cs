@@ -141,12 +141,14 @@ namespace WorkWithExcel
                         i++;
                     }
                     bl = true;
+
                 }
                 xlWorkBook.Close(true, Type.Missing, Type.Missing);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace.ToString());
+                MessageBox.Show("Помилка збереження");
             }
         }
 
