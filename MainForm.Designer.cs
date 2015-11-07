@@ -44,11 +44,9 @@
             this.правкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.додатиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.видалитиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редагуватиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.інструментиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пошукToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.параметриToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -60,7 +58,6 @@
             this.Druk = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Delete_country = new System.Windows.Forms.Button();
-            this.Edit_country = new System.Windows.Forms.Button();
             this.Add_country = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -70,8 +67,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -174,8 +171,7 @@
             // 
             this.правкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.додатиЗаписToolStripMenuItem,
-            this.видалитиЗаписToolStripMenuItem,
-            this.редагуватиЗаписToolStripMenuItem});
+            this.видалитиЗаписToolStripMenuItem});
             this.правкаToolStripMenuItem.Name = "правкаToolStripMenuItem";
             this.правкаToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.правкаToolStripMenuItem.Text = "Правка";
@@ -192,18 +188,11 @@
             this.видалитиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.видалитиЗаписToolStripMenuItem.Text = "Видалити запис";
             // 
-            // редагуватиЗаписToolStripMenuItem
-            // 
-            this.редагуватиЗаписToolStripMenuItem.Name = "редагуватиЗаписToolStripMenuItem";
-            this.редагуватиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.редагуватиЗаписToolStripMenuItem.Text = "Редагувати запис";
-            // 
             // інструментиToolStripMenuItem
             // 
             this.інструментиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.пошукToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.параметриToolStripMenuItem});
+            this.toolStripSeparator4});
             this.інструментиToolStripMenuItem.Name = "інструментиToolStripMenuItem";
             this.інструментиToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.інструментиToolStripMenuItem.Text = "Інструменти";
@@ -218,12 +207,6 @@
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(133, 6);
-            // 
-            // параметриToolStripMenuItem
-            // 
-            this.параметриToolStripMenuItem.Name = "параметриToolStripMenuItem";
-            this.параметриToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.параметриToolStripMenuItem.Text = "Параметри";
             // 
             // toolStrip1
             // 
@@ -323,7 +306,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.Delete_country);
-            this.panel1.Controls.Add(this.Edit_country);
             this.panel1.Controls.Add(this.Add_country);
             this.panel1.Location = new System.Drawing.Point(0, 424);
             this.panel1.Name = "panel1";
@@ -336,25 +318,12 @@
             this.Delete_country.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_country.ForeColor = System.Drawing.SystemColors.Control;
             this.Delete_country.Image = ((System.Drawing.Image)(resources.GetObject("Delete_country.Image")));
-            this.Delete_country.Location = new System.Drawing.Point(95, 12);
+            this.Delete_country.Location = new System.Drawing.Point(49, 12);
             this.Delete_country.Name = "Delete_country";
             this.Delete_country.Size = new System.Drawing.Size(40, 40);
             this.Delete_country.TabIndex = 2;
             this.toolTip1.SetToolTip(this.Delete_country, "Видалити запис");
             this.Delete_country.UseVisualStyleBackColor = true;
-            // 
-            // Edit_country
-            // 
-            this.Edit_country.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Edit_country.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Edit_country.ForeColor = System.Drawing.SystemColors.Control;
-            this.Edit_country.Image = ((System.Drawing.Image)(resources.GetObject("Edit_country.Image")));
-            this.Edit_country.Location = new System.Drawing.Point(49, 12);
-            this.Edit_country.Name = "Edit_country";
-            this.Edit_country.Size = new System.Drawing.Size(40, 40);
-            this.Edit_country.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.Edit_country, "Редагувати запис");
-            this.Edit_country.UseVisualStyleBackColor = true;
             // 
             // Add_country
             // 
@@ -371,18 +340,14 @@
             // 
             // dataGridView
             // 
-            this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(645, 360);
@@ -415,40 +380,40 @@
             this.deleteRowToolStripMenuItem.Text = "Видалити рядок";
             this.deleteRowToolStripMenuItem.Click += new System.EventHandler(this.deleteRowToolStripMenuItem_Click);
             // 
-            // textBox1
+            // textSearch
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(474, 27);
-            this.textBox1.MaxLength = 15;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 33);
-            this.textBox1.TabIndex = 8;
+            this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textSearch.Location = new System.Drawing.Point(466, 27);
+            this.textSearch.MaxLength = 15;
+            this.textSearch.Multiline = true;
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(159, 33);
+            this.textSearch.TabIndex = 8;
+            this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
             // 
-            // button1
+            // btnSearch
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(596, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(36, 32);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSearch.BackColor = System.Drawing.Color.White;
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(588, 27);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(36, 32);
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 480);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.textSearch);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
@@ -488,11 +453,9 @@
         private System.Windows.Forms.ToolStripMenuItem правкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem додатиЗаписToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem видалитиЗаписToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem редагуватиЗаписToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem інструментиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пошукToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem параметриToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
@@ -508,13 +471,12 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button Delete_country;
-        private System.Windows.Forms.Button Edit_country;
         private System.Windows.Forms.Button Add_country;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem deleteRowToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
