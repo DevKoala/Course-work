@@ -156,5 +156,10 @@ namespace WorkWithExcel
             workSheet.PrintPreview();
             xlWorkBook.Close(true, Type.Missing, Type.Missing);
         }
-      }
+
+        public static implicit operator string (ExcelTools v)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

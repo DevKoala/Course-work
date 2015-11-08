@@ -25,6 +25,8 @@ namespace work
         Color green = ColorTranslator.FromHtml("#40bd74");
         Color black = Color.Black;
         Color white = Color.White;
+        string path = null;
+
 
         public MainForm()
         {
@@ -72,12 +74,12 @@ namespace work
                     conStr = string.Format(Excel03ConString, filePath, header);
                     break;
 
-                case ".xlsx": //Excel 07
+                case ".xlsx": //Excel 07 ++
                     conStr = string.Format(Excel07ConString, filePath, header);
                     break;
             }
 
-            //Get the name of the First Sheet.
+            // Отримання назви першого листа
 
             try {
                 using (OleDbConnection con = new OleDbConnection(conStr))
@@ -91,7 +93,7 @@ namespace work
                         con.Close();
                     }
                 }
-                //Читання даних з першого листа
+                // Читання даних з першого листа
                 using (OleDbConnection con = new OleDbConnection(conStr))
                 {
                     using (OleDbCommand cmd = new OleDbCommand())
@@ -106,13 +108,14 @@ namespace work
                             oda.Fill(dt);
                             con.Close();
 
-                            //Populate DataGridView.
+                            // Record in datagridView
                             dataGridView1.DataSource = dt;
 
                             btnSearch.Enabled = true;
                             textSearch.Enabled = true;
                             radioButton2.Enabled = false;
                             rbHeaderYes.Enabled = false;
+                            label1.Hide();
                         }
                     }
                 }
@@ -134,7 +137,7 @@ namespace work
             //    excelTool = new ExcelTools(path);
             //}
             //else return;
-            //dataGridView.DataSource = excelTool.dataSet.Tables[0];
+            //dataGridView1.DataSource = excelTool.dataSet.Tables[0];
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -301,7 +304,7 @@ namespace work
            DialogResult dialog_result = MessageBox.Show("Ви впевнені, що хочете вийти?", "Вихід",
                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialog_result == DialogResult.No)
-                e.Cancel = true;          
+                e.Cancel = true;     
         }
     }
 }

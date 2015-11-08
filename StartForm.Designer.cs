@@ -56,7 +56,6 @@
             this.toolTip1.SetToolTip(this.button1, "Перейти до роботи з програмою");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonClose
             // 
@@ -78,7 +77,6 @@
             this.toolTip1.SetToolTip(this.buttonClose, "Вихід");
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Visible = false;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // timer1
             // 
@@ -94,7 +92,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // progressBar1
             // 

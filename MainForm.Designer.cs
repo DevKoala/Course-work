@@ -70,6 +70,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справакаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.закритиПоточнийДокументToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -168,7 +171,8 @@
             // 
             this.правкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.редагуватиЗаписToolStripMenuItem,
-            this.видалитиЗаписToolStripMenuItem});
+            this.видалитиЗаписToolStripMenuItem,
+            this.закритиПоточнийДокументToolStripMenuItem});
             this.правкаToolStripMenuItem.Name = "правкаToolStripMenuItem";
             this.правкаToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.правкаToolStripMenuItem.Text = "Правка";
@@ -284,6 +288,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btn_edit);
             this.panel1.Controls.Add(this.delete_row);
             this.panel1.Location = new System.Drawing.Point(0, 424);
@@ -373,6 +378,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(0, 66);
             this.panel2.Name = "panel2";
@@ -445,6 +451,34 @@
             this.справакаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.справакаToolStripMenuItem.Text = "Справка";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Font = new System.Drawing.Font("Fundamental  Brigade", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.LightCoral;
+            this.label1.Location = new System.Drawing.Point(28, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(475, 28);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Для подальшої роботи відкрийте документ Excel";
+            // 
+            // закритиПоточнийДокументToolStripMenuItem
+            // 
+            this.закритиПоточнийДокументToolStripMenuItem.Name = "закритиПоточнийДокументToolStripMenuItem";
+            this.закритиПоточнийДокументToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.закритиПоточнийДокументToolStripMenuItem.Text = "Закрити поточний документ";
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(405, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Закрити документ";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,6 +505,7 @@
             this.panel1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -521,5 +556,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справакаToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem закритиПоточнийДокументToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }

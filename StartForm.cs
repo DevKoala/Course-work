@@ -18,37 +18,19 @@ namespace work
             timer1.Start();
         }
 
-
-
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-            progressBar1.Increment(6);
+            progressBar1.Increment(8);
 
             if (progressBar1.Value == progressBar1.Maximum)
             {
                 timer1.Stop();
-                progressBar1.Visible = false;
-                button1.Visible = true;
-                buttonClose.Visible = true;
+                this.Hide();
+                MainForm mainfor = new MainForm();
+                mainfor.ShowDialog();
+                this.Close();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            MainForm mainfor = new MainForm();
-            mainfor.ShowDialog();
-            this.Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
