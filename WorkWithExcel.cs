@@ -53,18 +53,6 @@ namespace WorkWithExcel
                 //open connection
                 MyConnection.Open();
 
-                if (!fileExist)
-                {
-                    var cmd = MyConnection.CreateCommand();
-
-                    cmd.CommandText = "CREATE TABLE `Населення країн` (" +
-                        "`Країна` NVARCHAR(100), `Частина світу` NVARCHAR(100)," +
-                        "`Населення` DOUBLE, `Площа` DOUBLE," +
-                        "`Густота населення` DOUBLE,`Президент` NVARCHAR(100))";
-                    cmd.ExecuteNonQuery();
-
-                  }
-                dataSet = new DataSet();
 
                 //add all data to dataSet from Excel file
                 foreach (DataRow row in MyConnection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null).Rows)

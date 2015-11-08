@@ -52,7 +52,6 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 32);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Next >>";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.button1, "Перейти до роботи з програмою");
             this.button1.UseVisualStyleBackColor = false;

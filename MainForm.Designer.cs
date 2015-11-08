@@ -36,7 +36,6 @@
             this.створитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.зберегтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.зберегтиЯкToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.друкToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -55,7 +54,7 @@
             this.btn_Print = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_edit = new System.Windows.Forms.Button();
-            this.Delete_country = new System.Windows.Forms.Button();
+            this.delete_row = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -69,6 +68,8 @@
             this.rbHeaderYes = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справакаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -83,7 +84,8 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.правкаToolStripMenuItem});
+            this.правкаToolStripMenuItem,
+            this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(535, 24);
@@ -97,7 +99,6 @@
             this.створитиToolStripMenuItem,
             this.toolStripSeparator1,
             this.зберегтиToolStripMenuItem,
-            this.зберегтиЯкToolStripMenuItem,
             this.toolStripSeparator2,
             this.друкToolStripMenuItem,
             this.toolStripSeparator3,
@@ -111,7 +112,7 @@
             this.відкритиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("відкритиToolStripMenuItem.Image")));
             this.відкритиToolStripMenuItem.Name = "відкритиToolStripMenuItem";
             this.відкритиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.відкритиToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.відкритиToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.відкритиToolStripMenuItem.Text = "Відкрити";
             this.відкритиToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -136,14 +137,6 @@
             this.зберегтиToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.зберегтиToolStripMenuItem.Text = "Зберегти";
             this.зберегтиToolStripMenuItem.Click += new System.EventHandler(this.зберегтиToolStripMenuItem_Click);
-            // 
-            // зберегтиЯкToolStripMenuItem
-            // 
-            this.зберегтиЯкToolStripMenuItem.Name = "зберегтиЯкToolStripMenuItem";
-            this.зберегтиЯкToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-            this.зберегтиЯкToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.зберегтиЯкToolStripMenuItem.Text = "Зберегти як...";
             // 
             // toolStripSeparator2
             // 
@@ -292,7 +285,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_edit);
-            this.panel1.Controls.Add(this.Delete_country);
+            this.panel1.Controls.Add(this.delete_row);
             this.panel1.Location = new System.Drawing.Point(0, 424);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(548, 57);
@@ -305,26 +298,27 @@
             this.btn_edit.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.Image")));
             this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_edit.Location = new System.Drawing.Point(12, 3);
+            this.btn_edit.Location = new System.Drawing.Point(12, 8);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(40, 45);
             this.btn_edit.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btn_edit, "Редагувати запис");
             this.btn_edit.UseVisualStyleBackColor = true;
             // 
-            // Delete_country
+            // delete_row
             // 
-            this.Delete_country.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Delete_country.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete_country.ForeColor = System.Drawing.SystemColors.Control;
-            this.Delete_country.Image = ((System.Drawing.Image)(resources.GetObject("Delete_country.Image")));
-            this.Delete_country.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Delete_country.Location = new System.Drawing.Point(50, 3);
-            this.Delete_country.Name = "Delete_country";
-            this.Delete_country.Size = new System.Drawing.Size(40, 45);
-            this.Delete_country.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.Delete_country, "Видалити запис");
-            this.Delete_country.UseVisualStyleBackColor = true;
+            this.delete_row.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.delete_row.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete_row.ForeColor = System.Drawing.SystemColors.Control;
+            this.delete_row.Image = ((System.Drawing.Image)(resources.GetObject("delete_row.Image")));
+            this.delete_row.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.delete_row.Location = new System.Drawing.Point(49, 8);
+            this.delete_row.Name = "delete_row";
+            this.delete_row.Size = new System.Drawing.Size(40, 45);
+            this.delete_row.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.delete_row, "Видалити запис");
+            this.delete_row.UseVisualStyleBackColor = true;
+            this.delete_row.Click += new System.EventHandler(this.delete_row_Click);
             // 
             // openFileDialog1
             // 
@@ -424,6 +418,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Controls.Add(this.rbHeaderYes);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -433,6 +428,22 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Заголовки";
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.справакаToolStripMenuItem});
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.справкаToolStripMenuItem.Text = "Допомога";
+            // 
+            // справакаToolStripMenuItem
+            // 
+            this.справакаToolStripMenuItem.Name = "справакаToolStripMenuItem";
+            this.справакаToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.справакаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.справакаToolStripMenuItem.Text = "Справка";
             // 
             // MainForm
             // 
@@ -476,7 +487,6 @@
         private System.Windows.Forms.ToolStripMenuItem створитиToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem зберегтиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem зберегтиЯкToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem друкToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
@@ -496,7 +506,7 @@
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button Delete_country;
+        private System.Windows.Forms.Button delete_row;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem deleteRowToolStripMenuItem;
@@ -509,5 +519,7 @@
         private System.Windows.Forms.RadioButton rbHeaderYes;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem справакаToolStripMenuItem;
     }
 }
