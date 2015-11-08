@@ -51,25 +51,25 @@
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.Шрифт = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.Druk = new System.Windows.Forms.ToolStripButton();
+            this.btn_Print = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Delete_country = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.panel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -80,7 +80,7 @@
             this.правкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(645, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(535, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -186,12 +186,12 @@
             this.toolStripSeparator6,
             this.Шрифт,
             this.toolStripSeparator7,
-            this.Druk});
+            this.btn_Print});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(645, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(535, 39);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -259,23 +259,23 @@
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 39);
             // 
-            // Druk
+            // btn_Print
             // 
-            this.Druk.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Druk.Image = ((System.Drawing.Image)(resources.GetObject("Druk.Image")));
-            this.Druk.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.Druk.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Druk.Margin = new System.Windows.Forms.Padding(2, 2, 10, 2);
-            this.Druk.Name = "Druk";
-            this.Druk.Size = new System.Drawing.Size(28, 35);
-            this.Druk.Text = "Друк";
+            this.btn_Print.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_Print.Image = ((System.Drawing.Image)(resources.GetObject("btn_Print.Image")));
+            this.btn_Print.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btn_Print.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Print.Margin = new System.Windows.Forms.Padding(2, 2, 10, 2);
+            this.btn_Print.Name = "btn_Print";
+            this.btn_Print.Size = new System.Drawing.Size(28, 35);
+            this.btn_Print.Text = "Друк";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.Delete_country);
             this.panel1.Location = new System.Drawing.Point(0, 424);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(645, 57);
+            this.panel1.Size = new System.Drawing.Size(548, 57);
             this.panel1.TabIndex = 3;
             // 
             // Delete_country
@@ -291,32 +291,9 @@
             this.toolTip1.SetToolTip(this.Delete_country, "Видалити запис");
             this.Delete_country.UseVisualStyleBackColor = true;
             // 
-            // dataGridView
-            // 
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(645, 360);
-            this.dataGridView.TabIndex = 5;
-            this.dataGridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseUp_1);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.dataGridView);
-            this.panel2.Location = new System.Drawing.Point(0, 66);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(645, 360);
-            this.panel2.TabIndex = 7;
             // 
             // contextMenuStrip1
             // 
@@ -336,7 +313,7 @@
             // 
             this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textSearch.Location = new System.Drawing.Point(466, 27);
+            this.textSearch.Location = new System.Drawing.Point(365, 24);
             this.textSearch.MaxLength = 15;
             this.textSearch.Multiline = true;
             this.textSearch.Name = "textSearch";
@@ -354,18 +331,41 @@
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(588, 27);
+            this.btnSearch.Location = new System.Drawing.Point(487, 24);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(36, 32);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(0, 66);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(535, 360);
+            this.panel2.TabIndex = 7;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(548, 360);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseUp_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 480);
+            this.ClientSize = new System.Drawing.Size(535, 480);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textSearch);
             this.Controls.Add(this.panel2);
@@ -384,9 +384,9 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,18 +415,18 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton Шрифт;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-        private System.Windows.Forms.ToolStripButton Druk;
+        private System.Windows.Forms.ToolStripButton btn_Print;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button Delete_country;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem deleteRowToolStripMenuItem;
         private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

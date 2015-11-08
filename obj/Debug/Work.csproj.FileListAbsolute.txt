@@ -34,3 +34,15 @@ C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\work.MainFor
 C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\work.StartForm.resources
 C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\Work.Properties.Resources.resources
 C:\Users\Коля\Desktop\Course work\Work - backup 11.01\obj\Debug\Work.csproj.GenerateResource.Cache
+D:\Course work\Course-work\bin\Debug\Work.exe.config
+D:\Course work\Course-work\obj\Debug\Work.csproj.ResolveComReference.cache
+D:\Course work\Course-work\obj\Debug\Work.exe
+D:\Course work\Course-work\obj\Debug\Work.pdb
+D:\Course work\Course-work\bin\Debug\Work.exe
+D:\Course work\Course-work\bin\Debug\Work.pdb
+D:\Course work\Course-work\obj\Debug\Work.csprojResolveAssemblyReference.cache
+D:\Course work\Course-work\obj\Debug\work.EditForm.resources
+D:\Course work\Course-work\obj\Debug\work.MainForm.resources
+D:\Course work\Course-work\obj\Debug\work.StartForm.resources
+D:\Course work\Course-work\obj\Debug\Work.Properties.Resources.resources
+D:\Course work\Course-work\obj\Debug\Work.csproj.GenerateResource.Cache

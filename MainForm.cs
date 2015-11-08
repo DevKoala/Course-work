@@ -19,13 +19,18 @@ namespace work
         private ExcelTools excelTool = null;
         private String path = null;
         private int rowIndex = 0;
-   
+        Color red = ColorTranslator.FromHtml("#ff3b3b");
+        Color black = Color.Black;
+        Color white = Color.White;
+
         private int currentTable = 0;
         public MainForm()
         {
             InitializeComponent();
             this.Height = 520;
-            this.Width = 648;
+            this.Width = 555;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = red;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = white;
 
         }
 
@@ -38,13 +43,13 @@ namespace work
         {
             fontDialog1.ShowColor = true;
 
-            fontDialog1.Font = dataGridView.Font;
-            fontDialog1.Color = dataGridView.ForeColor;
+            fontDialog1.Font = dataGridView1.Font;
+            fontDialog1.Color = dataGridView1.ForeColor;
 
             if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                dataGridView.Font = fontDialog1.Font;
-                dataGridView.ForeColor = fontDialog1.Color;
+                dataGridView1.Font = fontDialog1.Font;
+                dataGridView1.ForeColor = fontDialog1.Color;
             }
         }
 
@@ -70,7 +75,7 @@ namespace work
             {
                 path = openFile.FileName;
                 excelTool = new ExcelTools(path);
-                dataGridView.DataSource = excelTool.dataSet.Tables[currentTable];
+                dataGridView1.DataSource = excelTool.dataSet.Tables[currentTable];
             }
         }
 
@@ -82,7 +87,7 @@ namespace work
         // =======================================================================================
 
 
-        // saving a table
+        // SAVING A TABLE
         private void зберегтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (path == null) return;
@@ -91,15 +96,15 @@ namespace work
         }
 
 
-        // showing a context menu item
+        // SHOWING A CCONTEXT MENU ITEM
         private void dataGridView_CellMouseUp_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
-                this.dataGridView.Rows[e.RowIndex].Selected = true;
+                this.dataGridView1.Rows[e.RowIndex].Selected = true;
                 this.rowIndex = e.RowIndex;
-                this.dataGridView.CurrentCell = this.dataGridView.Rows[e.RowIndex].Cells[1];
-                this.contextMenuStrip1.Show(this.dataGridView, e.Location);
+                this.dataGridView1.CurrentCell = this.dataGridView1.Rows[e.RowIndex].Cells[1];
+                this.contextMenuStrip1.Show(this.dataGridView1, e.Location);
                 contextMenuStrip1.Show(Cursor.Position);
             }
         }
@@ -107,44 +112,57 @@ namespace work
         //  DELETING A ROW
         private void deleteRowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!this.dataGridView.Rows[this.rowIndex].IsNewRow)
+            if (!this.dataGridView1.Rows[this.rowIndex].IsNewRow)
             {
-                this.dataGridView.Rows.RemoveAt(this.rowIndex);
+                this.dataGridView1.Rows.RemoveAt(this.rowIndex);
             }
         }
 
         // SEARCH
         private void textSearch_TextChanged(object sender, EventArgs e)
         {
+            string search_text = textSearch.Text;
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dataGridView1.DataSource as DataTable;
+            dataGridView1.ClearSelection();
+            dataGridView1.DefaultCellStyle.BackColor = white;
 
-            string searchValue = textSearch.Text;
-            for (int i = 3; i <= dataGridView.Rows.Count; i++)
-            {
-                try {
-                    foreach (DataGridViewRow row in dataGridView.Rows)
+            try {
+                foreach(DataGridViewColumn col in dataGridView1.Columns)
+                {
+                    bs.Position = bs.Find(col.Name.ToString(), search_text);
+                    if (search_text != "")
                     {
-                        if (row.Cells[2].Value.ToString().Equals(searchValue))
+                        if (bs.Position == 0)
                         {
-                            row.Selected = true;
+                            MessageBox.Show("Заданого елементу не знайдено");
                             break;
                         }
+                        dataGridView1.DefaultCellStyle.SelectionBackColor = red;
+                        dataGridView1.DefaultCellStyle.BackColor = black;
+                        dataGridView1.Rows[bs.Position].Selected = true;
+                        dataGridView1.Rows[0].Selected = false;
                     }
-                }
-                catch (Exception exc)
-                {
-                    MessageBox.Show(exc.Message);
-                }
+                    else
+                        break;
+                }   
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
             }
         }
 
+        // SEARCH BUTTON
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(textSearch.Text);
+            MessageBox.Show(dataGridView1.Columns[1].ToString());
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-           DialogResult dialog_result = MessageBox.Show("Ви впевнені, що хочете вийти?", "Вихід", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+           DialogResult dialog_result = MessageBox.Show("Ви впевнені, що хочете вийти?", "Вихід",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialog_result == DialogResult.No)
                 e.Cancel = true;          
         }
