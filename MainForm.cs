@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Xml;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WorkWithExcel;
-using System.Data.SqlClient;
 using System.Data.OleDb;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace work
 {
@@ -36,7 +30,9 @@ namespace work
             dataGridView1.DefaultCellStyle.SelectionBackColor = green;
             dataGridView1.DefaultCellStyle.SelectionForeColor = white;
             rbHeaderYes.Checked = true;
-
+            toolStripButton3.Enabled = false;
+            btn_Print.Enabled = false;
+            font_btn.Enabled = false;
         }
 
         private void вихідToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,7 +40,8 @@ namespace work
             Application.Exit();
         }
 
-        private void Шрифт_Click(object sender, EventArgs e)
+
+        private void font_btn_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowColor = true;
 
@@ -115,6 +112,10 @@ namespace work
                             textSearch.Enabled = true;
                             radioButton2.Enabled = false;
                             rbHeaderYes.Enabled = false;
+                            btn_CloseDocument.Enabled = true;
+                            toolStripButton3.Enabled = true;
+                            btn_Print.Enabled = true;
+                            font_btn.Enabled = true;
                             label1.Hide();
                         }
                     }
@@ -264,7 +265,6 @@ namespace work
         {
             string search_text = textSearch.Text;
             int count = 0;
-
             dataGridView1.ClearSelection();
             dataGridView1.DefaultCellStyle.BackColor = white;
 
@@ -278,7 +278,13 @@ namespace work
                 {
                     for (int j = 0; j < dataGridView1.Columns.Count; j++)
                     {
-                        if (dataGridView1.Rows[i].Cells[j].Value.ToString() == search_text)
+
+                        // Regular expression
+                        Regex regex = new Regex("(" + search_text + ")",
+                            RegexOptions.IgnoreCase);
+
+
+                        if (regex.IsMatch(dataGridView1.Rows[i].Cells[j].Value.ToString()))
                         {
                             dataGridView1.DefaultCellStyle.SelectionBackColor = green;
                             dataGridView1.DefaultCellStyle.BackColor = black;
@@ -298,12 +304,11 @@ namespace work
                 if(search_text.Length != 0) {
                     if (count == 0) MessageBox.Show("По вашому запиту результатів не знайдено!",
                         "Результат пошуку", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-
-                    else if (count == 1) MessageBox.Show("По вашому запиту знайдено " + count + " результат",
+                    else if (count == 1) MessageBox.Show("По вашому запиту знайдено " + count + " результат.",
                         "Результат пошуку", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else if (count > 1 && count <= 4) MessageBox.Show("По вашому запиту знайдено " + count + " результати", 
+                    else if (count > 1 && count <= 4) MessageBox.Show("По вашому запиту знайдено " + count + " результати.", 
                         "Результат пошуку", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    else if (count >= 5) MessageBox.Show("По вашому запиту знайдено " + count + " результатів", 
+                    else if (count >= 5) MessageBox.Show("По вашому запиту знайдено " + count + " результатів.", 
                         "Результат пошуку", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
             }
@@ -316,5 +321,6 @@ namespace work
             if (dialog_result == DialogResult.No)
                 e.Cancel = true;     
         }
+
     }
 }

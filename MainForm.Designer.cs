@@ -52,7 +52,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.Шрифт = new System.Windows.Forms.ToolStripButton();
+            this.font_btn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_Print = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -222,7 +222,7 @@
             this.toolStripSeparator5,
             this.toolStripButton3,
             this.toolStripSeparator6,
-            this.Шрифт,
+            this.font_btn,
             this.toolStripSeparator7,
             this.btn_Print});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
@@ -280,17 +280,17 @@
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 40);
             // 
-            // Шрифт
+            // font_btn
             // 
-            this.Шрифт.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.Шрифт.Image = ((System.Drawing.Image)(resources.GetObject("Шрифт.Image")));
-            this.Шрифт.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.Шрифт.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.Шрифт.Margin = new System.Windows.Forms.Padding(2);
-            this.Шрифт.Name = "Шрифт";
-            this.Шрифт.Size = new System.Drawing.Size(36, 36);
-            this.Шрифт.Text = "Шрифт";
-            this.Шрифт.Click += new System.EventHandler(this.Шрифт_Click);
+            this.font_btn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.font_btn.Image = ((System.Drawing.Image)(resources.GetObject("font_btn.Image")));
+            this.font_btn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.font_btn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.font_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.font_btn.Name = "font_btn";
+            this.font_btn.Size = new System.Drawing.Size(36, 36);
+            this.font_btn.Text = "Шрифт";
+            this.font_btn.Click += new System.EventHandler(this.font_btn_Click);
             // 
             // toolStripSeparator7
             // 
@@ -321,6 +321,7 @@
             // btn_CloseDocument
             // 
             this.btn_CloseDocument.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CloseDocument.Enabled = false;
             this.btn_CloseDocument.Location = new System.Drawing.Point(405, 19);
             this.btn_CloseDocument.Name = "btn_CloseDocument";
             this.btn_CloseDocument.Size = new System.Drawing.Size(119, 23);
@@ -536,7 +537,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripButton Шрифт;
+        private System.Windows.Forms.ToolStripButton font_btn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton btn_Print;
         private System.Windows.Forms.Panel panel1;
