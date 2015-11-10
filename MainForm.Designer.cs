@@ -43,6 +43,9 @@
             this.правкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редагуватиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.видалитиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.закритиПоточнийДокументToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справакаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -53,6 +56,7 @@
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_Print = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_CloseDocument = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.delete_row = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
@@ -64,15 +68,11 @@
             this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.rbHeaderYes = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справакаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.закритиПоточнийДокументToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -123,47 +123,47 @@
             // 
             this.створитиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("створитиToolStripMenuItem.Image")));
             this.створитиToolStripMenuItem.Name = "створитиToolStripMenuItem";
-            this.створитиToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.створитиToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.створитиToolStripMenuItem.Text = "Створити...";
             this.створитиToolStripMenuItem.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(162, 6);
             // 
             // зберегтиToolStripMenuItem
             // 
             this.зберегтиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("зберегтиToolStripMenuItem.Image")));
             this.зберегтиToolStripMenuItem.Name = "зберегтиToolStripMenuItem";
             this.зберегтиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.зберегтиToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.зберегтиToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.зберегтиToolStripMenuItem.Text = "Зберегти";
             this.зберегтиToolStripMenuItem.Click += new System.EventHandler(this.зберегтиToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(217, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(162, 6);
             // 
             // друкToolStripMenuItem
             // 
             this.друкToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("друкToolStripMenuItem.Image")));
             this.друкToolStripMenuItem.Name = "друкToolStripMenuItem";
             this.друкToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.друкToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.друкToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.друкToolStripMenuItem.Text = "Друк";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(217, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(162, 6);
             // 
             // вихідToolStripMenuItem
             // 
             this.вихідToolStripMenuItem.Name = "вихідToolStripMenuItem";
             this.вихідToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.вихідToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.вихідToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.вихідToolStripMenuItem.Text = "Вихід";
             this.вихідToolStripMenuItem.Click += new System.EventHandler(this.вихідToolStripMenuItem_Click);
             // 
@@ -181,15 +181,37 @@
             // 
             this.редагуватиЗаписToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("редагуватиЗаписToolStripMenuItem.Image")));
             this.редагуватиЗаписToolStripMenuItem.Name = "редагуватиЗаписToolStripMenuItem";
-            this.редагуватиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.редагуватиЗаписToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.редагуватиЗаписToolStripMenuItem.Text = "Редагувати запис";
             // 
             // видалитиЗаписToolStripMenuItem
             // 
             this.видалитиЗаписToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("видалитиЗаписToolStripMenuItem.Image")));
             this.видалитиЗаписToolStripMenuItem.Name = "видалитиЗаписToolStripMenuItem";
-            this.видалитиЗаписToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.видалитиЗаписToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.видалитиЗаписToolStripMenuItem.Text = "Видалити запис";
+            // 
+            // закритиПоточнийДокументToolStripMenuItem
+            // 
+            this.закритиПоточнийДокументToolStripMenuItem.Name = "закритиПоточнийДокументToolStripMenuItem";
+            this.закритиПоточнийДокументToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.закритиПоточнийДокументToolStripMenuItem.Text = "Закрити поточний документ";
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.справакаToolStripMenuItem});
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.справкаToolStripMenuItem.Text = "Допомога";
+            // 
+            // справакаToolStripMenuItem
+            // 
+            this.справакаToolStripMenuItem.Name = "справакаToolStripMenuItem";
+            this.справакаToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.справакаToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.справакаToolStripMenuItem.Text = "Справка";
             // 
             // toolStrip1
             // 
@@ -288,13 +310,23 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_CloseDocument);
             this.panel1.Controls.Add(this.btn_edit);
             this.panel1.Controls.Add(this.delete_row);
             this.panel1.Location = new System.Drawing.Point(0, 424);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(548, 57);
             this.panel1.TabIndex = 3;
+            // 
+            // btn_CloseDocument
+            // 
+            this.btn_CloseDocument.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_CloseDocument.Location = new System.Drawing.Point(405, 19);
+            this.btn_CloseDocument.Name = "btn_CloseDocument";
+            this.btn_CloseDocument.Size = new System.Drawing.Size(119, 23);
+            this.btn_CloseDocument.TabIndex = 4;
+            this.btn_CloseDocument.Text = "Закрити документ";
+            this.btn_CloseDocument.UseVisualStyleBackColor = true;
             // 
             // btn_edit
             // 
@@ -349,7 +381,7 @@
             // 
             this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textSearch.Enabled = false;
-            this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textSearch.Font = new System.Drawing.Font("Fundamental  Brigade", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textSearch.Location = new System.Drawing.Point(365, 24);
             this.textSearch.MaxLength = 15;
             this.textSearch.Multiline = true;
@@ -384,6 +416,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(535, 360);
             this.panel2.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Font = new System.Drawing.Font("Fundamental  Brigade", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.LightCoral;
+            this.label1.Location = new System.Drawing.Point(28, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(475, 28);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Для подальшої роботи відкрийте документ Excel";
             // 
             // dataGridView1
             // 
@@ -435,50 +479,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Заголовки";
             // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.справакаToolStripMenuItem});
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.справкаToolStripMenuItem.Text = "Допомога";
-            // 
-            // справакаToolStripMenuItem
-            // 
-            this.справакаToolStripMenuItem.Name = "справакаToolStripMenuItem";
-            this.справакаToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.справакаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.справакаToolStripMenuItem.Text = "Справка";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Fundamental  Brigade", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.LightCoral;
-            this.label1.Location = new System.Drawing.Point(28, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(475, 28);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Для подальшої роботи відкрийте документ Excel";
-            // 
-            // закритиПоточнийДокументToolStripMenuItem
-            // 
-            this.закритиПоточнийДокументToolStripMenuItem.Name = "закритиПоточнийДокументToolStripMenuItem";
-            this.закритиПоточнийДокументToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.закритиПоточнийДокументToolStripMenuItem.Text = "Закрити поточний документ";
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(405, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Закрити документ";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,12 +491,14 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Rock groups";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -558,6 +560,6 @@
         private System.Windows.Forms.ToolStripMenuItem справакаToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem закритиПоточнийДокументToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_CloseDocument;
     }
 }

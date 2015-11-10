@@ -32,7 +32,7 @@ namespace work
         {
             InitializeComponent();
             this.Height = 520;
-            this.Width = 555;
+            this.Width = 550;
             dataGridView1.DefaultCellStyle.SelectionBackColor = green;
             dataGridView1.DefaultCellStyle.SelectionForeColor = white;
             rbHeaderYes.Checked = true;
@@ -263,39 +263,49 @@ namespace work
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string search_text = textSearch.Text;
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dataGridView1.DataSource as DataTable;
+            int count = 0;
+
             dataGridView1.ClearSelection();
             dataGridView1.DefaultCellStyle.BackColor = white;
 
             try
             {
-
-
-                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                if(search_text.Length == 0)
                 {
-                    bs.Position = bs.Find(col.Name.ToString(), search_text);
-                    if (search_text != "")
+                    MessageBox.Show("Поле для пошуку пусте!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                }
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
                     {
-
-                        dataGridView1.DefaultCellStyle.SelectionBackColor = green;
-                        dataGridView1.DefaultCellStyle.BackColor = black;
-                        dataGridView1.Rows[bs.Position].Selected = true;
-                        dataGridView1.Rows[0].Selected = false;
+                        if (dataGridView1.Rows[i].Cells[j].Value.ToString() == search_text)
+                        {
+                            dataGridView1.DefaultCellStyle.SelectionBackColor = green;
+                            dataGridView1.DefaultCellStyle.BackColor = black;
+                            dataGridView1.Rows[i].Selected = true;
+                            count++;
+                            break;
+                        }
                     }
-                    else
-                        break;
                 }
-                if (bs.Position == 0 && search_text != "")
-                {
-                    dataGridView1.DefaultCellStyle.BackColor = white;
-                    MessageBox.Show("По вашому запиту нічого не знайдено!");
-                }
-
             }
             catch (Exception exc)
             {
-                MessageBox.Show(exc.Message);
+                //MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                if(search_text.Length != 0) {
+                    if (count == 0) MessageBox.Show("По вашому запиту результатів не знайдено!",
+                        "Результат пошуку", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+
+                    else if (count == 1) MessageBox.Show("По вашому запиту знайдено " + count + " результат",
+                        "Результат пошуку", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else if (count > 1 && count <= 4) MessageBox.Show("По вашому запиту знайдено " + count + " результати", 
+                        "Результат пошуку", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else if (count >= 5) MessageBox.Show("По вашому запиту знайдено " + count + " результатів", 
+                        "Результат пошуку", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
             }
         }
 
