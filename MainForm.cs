@@ -6,23 +6,29 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
 using System.Text.RegularExpressions;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace work
 {
     public partial class MainForm : Form
     {
-
+        // perfomance for odbc connection
         private string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
         private string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
 
+
+        // List of variables
         DataGridViewRow row = new DataGridViewRow();
         private int rowIndex = 0;
+
         Color green = ColorTranslator.FromHtml("#40bd74");
         Color black = Color.Black;
         Color white = Color.White;
+
         string path = null;
 
-
+        //===================================================================================
+        // INITIALIZE
         public MainForm()
         {
             InitializeComponent();
@@ -37,14 +43,12 @@ namespace work
             btn_Print.Enabled = false;
             font_btn.Enabled = false;
             правкаToolStripMenuItem.Enabled = false;
+            delete_row.Enabled = false;
+            btn_Insert.Enabled = false;
+            btn_Copy.Enabled = false;
         }
 
-        private void вихідToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-
+        // Change a font
         private void font_btn_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowColor = true;
@@ -122,6 +126,9 @@ namespace work
                             font_btn.Enabled = true;
                             правкаToolStripMenuItem.Enabled = true;
                             label1.Hide();
+                            delete_row.Enabled = true;
+                            btn_Insert.Enabled = true;
+                            btn_Copy.Enabled = true;
                         }
                     }
                 }
@@ -132,6 +139,7 @@ namespace work
             }
 }
 
+        //Creating a new file
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             //SaveFileDialog fileDialog = new SaveFileDialog();
@@ -241,10 +249,10 @@ namespace work
 
         private void delete_row_Click(object sender, EventArgs e)
         {
-            if (!this.dataGridView1.Rows[this.rowIndex].IsNewRow)
+            if (!dataGridView1.Rows[rowIndex].IsNewRow)
             {
                 if (MessageBox.Show("Ви впевнені, що хочете видалити рядок?", "Видалення рядка", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    this.dataGridView1.Rows.RemoveAt(this.rowIndex);
+                    dataGridView1.Rows.RemoveAt(rowIndex);
                 else
                     return;
             }
@@ -319,16 +327,10 @@ namespace work
             }
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-           DialogResult dialog_result = MessageBox.Show("Ви впевнені, що хочете вийти?", "Вихід",
-               MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dialog_result == DialogResult.No)
-                e.Cancel = true;     
-        }
+        // ====================================================================================
 
         // Copy row function
-        private void rowCopy_Click(object sender, EventArgs e)
+        public void copyRow()
         {
             if (dataGridView1.GetCellCount(DataGridViewElementStates.Selected) > 0)
             {
@@ -342,12 +344,18 @@ namespace work
                     MessageBox.Show(ex.Message);
                 }
             }
-
+        }
+        private void rowCopy_Click(object sender, EventArgs e)
+        {
+            copyRow();
+        }
+        private void btn_Copy_Click(object sender, EventArgs e)
+        {
+            copyRow();
         }
 
-
         // Insert row function
-        private void rowInsert_Click(object sender, EventArgs e)
+        public void insertRow()
         {
             try
             {
@@ -391,7 +399,16 @@ namespace work
                 MessageBox.Show(ex.Message);
             }
         }
+        private void rowInsert_Click(object sender, EventArgs e)
+        {
+            insertRow();
+        }
+        private void btn_Insert_Click(object sender, EventArgs e)
+        {
+            insertRow();
+        }
 
+        // ====================================================================================
 
         //Closing document
         public void closeDoc()
@@ -415,6 +432,9 @@ namespace work
                     btn_CloseDocument.Enabled = false;
                     правкаToolStripMenuItem.Enabled = false;
                     textSearch.Enabled = false;
+                    delete_row.Enabled = false;
+                    btn_Insert.Enabled = false;
+                    btn_Copy.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -432,7 +452,39 @@ namespace work
         {
             closeDoc();
         }
-        
+
+        // Form closing
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialog_result = MessageBox.Show("Ви впевнені, що хочете вийти?", "Вихід",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialog_result == DialogResult.No)
+                e.Cancel = true;
+        }
+
+        private void вихідToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            printDocument1.Print();
+        }
+
+        private void btn_Undo_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.RejectChanges();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bmp = new Bitmap(dataGridView1.Size.Width + 15, dataGridView1.Size.Height + 10);
+            dataGridView1.DrawToBitmap(bmp, dataGridView1.Bounds);
+            e.Graphics.DrawImage(bmp, 0, 0);
+        }
+
         //==================================================================================================
     }
 }
