@@ -41,7 +41,6 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.вихідToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.правкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редагуватиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.видалитиЗаписToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.закритиПоточнийДокументToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +56,6 @@
             this.btn_Print = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_CloseDocument = new System.Windows.Forms.Button();
-            this.btn_edit = new System.Windows.Forms.Button();
             this.delete_row = new System.Windows.Forms.Button();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -73,6 +71,11 @@
             this.rbHeaderYes = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rowCopy = new System.Windows.Forms.ToolStripMenuItem();
+            this.rowInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.копіюватиРядокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вставитиРядокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -170,24 +173,20 @@
             // правкаToolStripMenuItem
             // 
             this.правкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.редагуватиЗаписToolStripMenuItem,
+            this.копіюватиРядокToolStripMenuItem,
+            this.вставитиРядокToolStripMenuItem,
             this.видалитиЗаписToolStripMenuItem,
+            this.toolStripSeparator4,
             this.закритиПоточнийДокументToolStripMenuItem});
             this.правкаToolStripMenuItem.Name = "правкаToolStripMenuItem";
             this.правкаToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.правкаToolStripMenuItem.Text = "Правка";
             // 
-            // редагуватиЗаписToolStripMenuItem
-            // 
-            this.редагуватиЗаписToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("редагуватиЗаписToolStripMenuItem.Image")));
-            this.редагуватиЗаписToolStripMenuItem.Name = "редагуватиЗаписToolStripMenuItem";
-            this.редагуватиЗаписToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
-            this.редагуватиЗаписToolStripMenuItem.Text = "Редагувати запис";
-            // 
             // видалитиЗаписToolStripMenuItem
             // 
             this.видалитиЗаписToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("видалитиЗаписToolStripMenuItem.Image")));
             this.видалитиЗаписToolStripMenuItem.Name = "видалитиЗаписToolStripMenuItem";
+            this.видалитиЗаписToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.видалитиЗаписToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.видалитиЗаписToolStripMenuItem.Text = "Видалити запис";
             // 
@@ -196,6 +195,7 @@
             this.закритиПоточнийДокументToolStripMenuItem.Name = "закритиПоточнийДокументToolStripMenuItem";
             this.закритиПоточнийДокументToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.закритиПоточнийДокументToolStripMenuItem.Text = "Закрити поточний документ";
+            this.закритиПоточнийДокументToolStripMenuItem.Click += new System.EventHandler(this.закритиПоточнийДокументToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -311,7 +311,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_CloseDocument);
-            this.panel1.Controls.Add(this.btn_edit);
             this.panel1.Controls.Add(this.delete_row);
             this.panel1.Location = new System.Drawing.Point(0, 424);
             this.panel1.Name = "panel1";
@@ -328,20 +327,7 @@
             this.btn_CloseDocument.TabIndex = 4;
             this.btn_CloseDocument.Text = "Закрити документ";
             this.btn_CloseDocument.UseVisualStyleBackColor = true;
-            // 
-            // btn_edit
-            // 
-            this.btn_edit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_edit.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.Image")));
-            this.btn_edit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_edit.Location = new System.Drawing.Point(12, 8);
-            this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(40, 45);
-            this.btn_edit.TabIndex = 3;
-            this.toolTip1.SetToolTip(this.btn_edit, "Редагувати запис");
-            this.btn_edit.UseVisualStyleBackColor = true;
+            this.btn_CloseDocument.Click += new System.EventHandler(this.btn_CloseDocument_Click);
             // 
             // delete_row
             // 
@@ -350,7 +336,7 @@
             this.delete_row.ForeColor = System.Drawing.SystemColors.Control;
             this.delete_row.Image = ((System.Drawing.Image)(resources.GetObject("delete_row.Image")));
             this.delete_row.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.delete_row.Location = new System.Drawing.Point(49, 8);
+            this.delete_row.Location = new System.Drawing.Point(12, 8);
             this.delete_row.Name = "delete_row";
             this.delete_row.Size = new System.Drawing.Size(40, 45);
             this.delete_row.TabIndex = 2;
@@ -366,15 +352,18 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteRowToolStripMenuItem});
+            this.deleteRowToolStripMenuItem,
+            this.rowCopy,
+            this.rowInsert});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(162, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(210, 70);
             // 
             // deleteRowToolStripMenuItem
             // 
             this.deleteRowToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteRowToolStripMenuItem.Image")));
             this.deleteRowToolStripMenuItem.Name = "deleteRowToolStripMenuItem";
-            this.deleteRowToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.deleteRowToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.deleteRowToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.deleteRowToolStripMenuItem.Text = "Видалити рядок";
             this.deleteRowToolStripMenuItem.Click += new System.EventHandler(this.deleteRowToolStripMenuItem_Click);
             // 
@@ -480,6 +469,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Заголовки";
             // 
+            // rowCopy
+            // 
+            this.rowCopy.Name = "rowCopy";
+            this.rowCopy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.rowCopy.Size = new System.Drawing.Size(209, 22);
+            this.rowCopy.Text = "Копіювати рядок";
+            this.rowCopy.Click += new System.EventHandler(this.rowCopy_Click);
+            // 
+            // rowInsert
+            // 
+            this.rowInsert.Name = "rowInsert";
+            this.rowInsert.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.rowInsert.Size = new System.Drawing.Size(209, 22);
+            this.rowInsert.Text = "Вставити рядок";
+            this.rowInsert.Click += new System.EventHandler(this.rowInsert_Click);
+            // 
+            // копіюватиРядокToolStripMenuItem
+            // 
+            this.копіюватиРядокToolStripMenuItem.Name = "копіюватиРядокToolStripMenuItem";
+            this.копіюватиРядокToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.копіюватиРядокToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.копіюватиРядокToolStripMenuItem.Text = "Копіювати рядок";
+            // 
+            // вставитиРядокToolStripMenuItem
+            // 
+            this.вставитиРядокToolStripMenuItem.Name = "вставитиРядокToolStripMenuItem";
+            this.вставитиРядокToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.вставитиРядокToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.вставитиРядокToolStripMenuItem.Text = "Вставити рядок";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(228, 6);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,6 +518,7 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -552,8 +577,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripMenuItem редагуватиЗаписToolStripMenuItem;
-        private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.RadioButton rbHeaderYes;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -562,5 +585,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem закритиПоточнийДокументToolStripMenuItem;
         private System.Windows.Forms.Button btn_CloseDocument;
+        private System.Windows.Forms.ToolStripMenuItem rowCopy;
+        private System.Windows.Forms.ToolStripMenuItem rowInsert;
+        private System.Windows.Forms.ToolStripMenuItem копіюватиРядокToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вставитиРядокToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
     }
 }

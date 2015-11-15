@@ -15,6 +15,7 @@ namespace work
         private string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
         private string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
 
+        DataGridViewRow row = new DataGridViewRow();
         private int rowIndex = 0;
         Color green = ColorTranslator.FromHtml("#40bd74");
         Color black = Color.Black;
@@ -27,12 +28,15 @@ namespace work
             InitializeComponent();
             this.Height = 520;
             this.Width = 550;
+            this.dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+
             dataGridView1.DefaultCellStyle.SelectionBackColor = green;
             dataGridView1.DefaultCellStyle.SelectionForeColor = white;
             rbHeaderYes.Checked = true;
             toolStripButton3.Enabled = false;
             btn_Print.Enabled = false;
             font_btn.Enabled = false;
+            правкаToolStripMenuItem.Enabled = false;
         }
 
         private void вихідToolStripMenuItem_Click(object sender, EventArgs e)
@@ -116,6 +120,7 @@ namespace work
                             toolStripButton3.Enabled = true;
                             btn_Print.Enabled = true;
                             font_btn.Enabled = true;
+                            правкаToolStripMenuItem.Enabled = true;
                             label1.Hide();
                         }
                     }
@@ -322,5 +327,112 @@ namespace work
                 e.Cancel = true;     
         }
 
+        // Copy row function
+        private void rowCopy_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.GetCellCount(DataGridViewElementStates.Selected) > 0)
+            {
+                try
+                {
+                    Clipboard.SetDataObject(this.dataGridView1.GetClipboardContent());
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+
+
+        // Insert row function
+        private void rowInsert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                char[] rowSplitter = { '\r', '\n' };
+                char[] columnSplitter = { '\t' };
+
+                //get the text from clipboard
+                IDataObject dataInClipboard = Clipboard.GetDataObject();
+                string stringInClipboard = (string)dataInClipboard.GetData(DataFormats.Text);
+
+                //split it into lines
+                string[] rowsInClipboard = stringInClipboard.Split(rowSplitter, StringSplitOptions.RemoveEmptyEntries);
+
+                //get the row and column of selected cell in grid
+                int r = dataGridView1.SelectedCells[0].RowIndex;
+                int c = dataGridView1.SelectedCells[0].ColumnIndex;
+
+                //add rows into grid to fit clipboard lines
+                if (dataGridView1.Rows.Count < (r + rowsInClipboard.Length))
+                    dataGridView1.Rows.Add(r + rowsInClipboard.Length - dataGridView1.Rows.Count);
+
+                // loop through the lines, split them into cells and place the values in the corresponding cell.
+                for (int iRow = 0; iRow < rowsInClipboard.Length; iRow++)
+                {
+                    //split row into cell values
+                    string[] valuesInRow = rowsInClipboard[iRow].Split(columnSplitter);
+
+                    //cycle through cell values
+                    for (int iCol = 0; iCol < valuesInRow.Length; iCol++)
+                    {
+                        //assign cell value, only if it within columns of the grid
+                        if (dataGridView1.ColumnCount - 1 >= c + iCol)
+                            dataGridView1.Rows[r + iRow].Cells[c + iCol].Value = valuesInRow[iCol];
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        //Closing document
+        public void closeDoc()
+        {
+            try
+            {
+                DialogResult dialog_result = MessageBox.Show("Ви впевнені, що хочете закрити поточний документ?", "Закриття документу",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (dialog_result == DialogResult.Yes)
+                {
+                    dataGridView1.DataSource = "";
+                    label1.Show();
+
+                    rbHeaderYes.Checked = true;
+                    toolStripButton3.Enabled = false;
+                    btn_Print.Enabled = false;
+                    font_btn.Enabled = false;
+                    radioButton2.Enabled = true;
+                    rbHeaderYes.Enabled = true;
+                    btn_CloseDocument.Enabled = false;
+                    правкаToolStripMenuItem.Enabled = false;
+                    textSearch.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_CloseDocument_Click(object sender, EventArgs e)
+        {
+            closeDoc();
+        }
+
+        private void закритиПоточнийДокументToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeDoc();
+        }
+        
+        //==================================================================================================
     }
 }
